@@ -1,0 +1,48 @@
+<script type="text/javascript">
+	/*
+		Name: Richard Diaz
+		Date: 09/08/2014
+		Class: Javascript
+		Purpose: Investigate the branching constructs
+	*/
+</script>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Paycheck</title>
+</head>
+
+<body>
+<script type="text/javascript">
+	// Declare and initialize variables
+	var hours = (Math.random()*20+30).toFixed(2); // Hours worked (hrs) // Math.random()*start+anynumber = end // .toFixed(decimalPlaces)
+	var payRate = (Math.random()*9+10).toFixed(2); // $/hr
+	var ovtSt = 40; // hr at which overtime starts
+	var ovt = (hours - ovtSt).toFixed(2); // calculate overtime
+	//undeckared variable
+	var payChk;
+	//Output the input
+	document.write("<h1>Hours worked    = "+hours    +" hours</h1>");
+	document.write("<h1>Payrate         = $"+payRate  +"/hr</h1>");
+	document.write("<h1>Overtime start  @ "+ovtSt      +" hours</h1>");
+	// Determine Paycheck
+	switch(hours<ovtSt)
+	{
+		case true:
+		{
+			payChk = hours * payRate;break;	
+		}
+		default:
+		{
+			document.write("<h1>Overtime    = "+ovt  +" hours</h1>");
+			payChk =(hours*payRate)+(hours - ovtSt)*payRate;break;
+		}
+	}
+	payChk=payChk.toFixed(2);
+	// Output our paycheck
+	document.write("<h1>Our Pay Check = $"+payChk+"</h1>");
+</script>
+</body>
+</html>
