@@ -28,16 +28,17 @@
 	document.write("<h1>Payrate         = $"+payRate  +"/hr</h1>");
 	document.write("<h1>Overtime start  @ "+ovtSt      +" hours</h1>");
 	// Determine Paycheck
-	if(hours<=ovtSt)
+	if(hours<=ovtSt) 
 	{
-		payChk = hours*payrate;
+		payChk = hours*payRate;
 	}
-	else if(hours>ovtSt)
+	else
 	{
 			document.write("<h1>Overtime    = "+ovt  +" hours</h1>");
-			payChk =(hours*payRate)+(hours-ovtSt)*payRate;
+			payChk=(hours*payRate)+(hours-ovtSt)*payRate;
 	}
 	payChk=payChk.toFixed(2);
+	
 	// Output our paycheck
 	document.write("<h1>Our Pay Check = $"+payChk+"</h1>");
 </script>
