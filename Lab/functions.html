@@ -1,0 +1,34 @@
+<script type="text/javascript">
+	/*
+		Name: Richard Diaz
+		Date: 09/10/2014
+		Class: Javascript
+		Purpose: Functions
+	*/
+</script>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>functions</title>
+</head>
+
+<body>
+<script type="text/javascript">
+	var price = 5;
+	var total;
+	document.write("Price per orange:  $",price, "<br>");
+
+	var orangeCost = function(orangeQt)
+	{
+		total = orangeQt*price;
+		document.write("Amount of oranges purchased:  ", orangeQt, "<br>");
+ 		document.write("Your total is:  $", total, "<br>");
+	};
+	var amt = prompt("How many oranges do you wish to buy?");
+	orangeCost(amt);
+</script>
+</body>
+</html>
