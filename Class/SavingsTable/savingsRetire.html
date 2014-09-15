@@ -18,10 +18,10 @@
 	<h1> Retirement Table </h1>
 <script type="text/javascript">
 	// Setup savings table
-	var bal = prompt("How much are you putting into retirement initially?"); // inital balance - $
+	var bal = Number(prompt("How much are you putting into retirement initially?")); // inital balance - $
 	var intRate = 5;  // interest rate - %/annum
 	var year = 2014;
-	var deposit = prompt("How much are you putting in every year?"); // deposit = $
+	var deposit = Number(prompt("How much are you putting in every year?")); // deposit = $
 	// initial conditions
 		document.write("<p> Starting Year: " +year+ "</p>");
 		document.write("<p> Starting balance = $" +bal+ "</p>");
@@ -36,8 +36,9 @@
       </tr>
 <script type="text/javascript">
 	// while loop
-	for(var year = 2015; year <= 2064; year++)
+	while(year < 2064)
 	{
+		year++;
 		document.write("<tr>");
 		document.write("<td>" +year+ "</td>");
 		// Calculate the balance

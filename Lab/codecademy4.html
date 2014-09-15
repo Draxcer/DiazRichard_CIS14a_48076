@@ -17,74 +17,63 @@
 <body>	
 <script type="text/javascript">
 	var computerChoice = Math.random();
-	
 	var userChoice = prompt("Do you choose rock, paper or scissors?");
+	//userChoice = userChoice.toLowerCase();
+	var str = "";
 	
-	while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors")
-	{
+	do{
 		userChoice = prompt("Please enter only rock, paper, or scissors!");
-	}
+		userChoice = userChoice.toLowerCase();
+	} while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors");
 	
-	if (computerChoice <= 0.34) 
-	{
+	if (computerChoice <= 0.34){
 		computerChoice = "rock";
 	} 
-	else if(computerChoice <= 0.67) 
-	{
+	else if(computerChoice <= 0.67){
 		computerChoice = "paper";
 	} 
-	else 
-	{
+	else{
 		computerChoice = "scissors";
 	} 
 	
 	//===
 	
-	var compare = function(choice1, choice2)
-	{
-		if(choice1 === choice2)
-		{
-			document.write("The result is a tie!" + "<br>");   
+	var compare = function(choice1, choice2){
+		if(choice1 === choice2){
+			str += ("<p> <b>Result:</b>  The result is a tie! </p>");   
 		}
-		else if(choice1 === "rock")
-		{
-			 if(choice2 === "scissors")
-			 {
-				document.write("Rock wins" + "<br>"); 
+		else if(choice1 === "rock"){
+			 if(choice2 === "scissors"){
+				str += ("<p> <b>Result:</b>  You (" +choice1+ ") win! </p>"); 
 			 }
-			 else
-			 {
-				document.write ("Paper wins" + "<br>");   
+			 else{
+				str +=("<p> <b>Result:</b>  Aw...Too bad, the Computer (" +choice2+ ") wins </p>");   
 			 }
 		}
-		else if(choice1 === "paper")
-		{
-			 if(choice2 === "rock")
-			 {
-				document.write("Paper wins" + "<br>"); 
+		else if(choice1 === "paper"){
+			 if(choice2 === "rock"){
+				str += ("<p> <b>Result:</b>  You (" +choice1+ ") win! </p>");  
 			 }
-			 else
-			 {
-				document.write("Scissors wins" + "<br>");   
+			 else{
+				str +=("<p> <b>Result:</b>  Aw...Too bad, the Computer (" +choice2+ ") wins </p>");   
 			 }
 		}
-		else if(choice1 === "scissors")
-		{
-			 if(choice2 === "paper")
-			 {
-				document.write("Scissors wins" + "<br>"); 
+		else if(choice1 === "scissors"){
+			 if(choice2 === "paper"){
+				str += ("<p> <b>Result:</b>  You (" +choice1+ ") win! </p>"); 
 			 }
-			 else
-			 {
-				document.write("Rock wins" + "<br>");   
+			 else{
+				str +=("<p> <b>Result:</b>  Aw...Too bad, the Computer (" +choice2+ ") wins </p>");   
 			 }
 		}
+		str += ("<p> Click <a href = codecademy4.html> here</a> to try again </p>");
 	};
 	
-	document.write("You chose: ", userChoice + "<br>");
-	document.write("Computer chose: " + computerChoice + "<br>");
+	str += ("<p> <b>You chose:</b>  " + userChoice + "</p>");
+	str += ("<p> <b>Computer chose:</b>  " + computerChoice + "</p>");
 	compare(userChoice, computerChoice);
-
+	document.write(str);
+	
 </script>
 
 </body>
