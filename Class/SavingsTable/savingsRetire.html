@@ -22,7 +22,6 @@
 	var intRate = 5;  // interest rate - %/annum
 	var year = 2014;
 	var deposit = prompt("How much are you putting in every year?"); // deposit = $
-	var str = ""
 	// initial conditions
 		document.write("<p> Starting Year: " +year+ "</p>");
 		document.write("<p> Starting balance = $" +bal+ "</p>");
@@ -37,19 +36,18 @@
       </tr>
 <script type="text/javascript">
 	// while loop
-	while(year < 2064)
+	for(var year = 2015; year <= 2064; year++)
 	{
-		year++;
 		document.write("<tr>");
 		document.write("<td>" +year+ "</td>");
 		// Calculate the balance
 		bal*=(1+intRate/100);
 		bal += deposit;
-		bal=bal.toFixed(2);
+		console.log(bal);
+		bal = bal.toFixed(2);
 		document.write("<td>" +bal+ "</td>");
-		document.write(str+= "</tr>"); 
+		document.write("</tr>"); 
 	}
-	document.write(str);
 </script>
 	</table>
 </body>
