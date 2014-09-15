@@ -1,0 +1,91 @@
+<script type="text/javascript">
+	/*
+		Name: Richard Diaz
+		Date: 09/11/2014
+		Class: Javascript
+		Purpose: Codecademy lesson 4
+	*/
+</script>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rock Paper Scissors</title>
+</head>
+
+<body>	
+<script type="text/javascript">
+	var computerChoice = Math.random();
+	
+	var userChoice = prompt("Do you choose rock, paper or scissors?");
+	
+	while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors")
+	{
+		userChoice = prompt("Please enter only rock, paper, or scissors!");
+	}
+	
+	if (computerChoice <= 0.34) 
+	{
+		computerChoice = "rock";
+	} 
+	else if(computerChoice <= 0.67) 
+	{
+		computerChoice = "paper";
+	} 
+	else 
+	{
+		computerChoice = "scissors";
+	} 
+	
+	//===
+	
+	var compare = function(choice1, choice2)
+	{
+		if(choice1 === choice2)
+		{
+			document.write("The result is a tie!" + "<br>");   
+		}
+		else if(choice1 === "rock")
+		{
+			 if(choice2 === "scissors")
+			 {
+				document.write("rock wins" + "<br>"); 
+			 }
+			 else
+			 {
+				document.write ("paper wins" + "<br>");   
+			 }
+		}
+		else if(choice1 === "paper")
+		{
+			 if(choice2 === "rock")
+			 {
+				document.write("paper wins" + "<br>"); 
+			 }
+			 else
+			 {
+				document.write("scissors wins" + "<br>");   
+			 }
+		}
+		else if(choice1 === "scissors")
+		{
+			 if(choice2 === "paper")
+			 {
+				document.write("scissors wins" + "<br>"); 
+			 }
+			 else
+			 {
+				document.write("rock wins" + "<br>");   
+			 }
+		}
+	};
+	
+	document.write("You chose: ", userChoice + "<br>");
+	document.write("Computer chose: " + computerChoice + "<br>");
+	compare(userChoice, computerChoice);
+
+</script>
+
+</body>
+</html>
