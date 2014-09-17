@@ -38,8 +38,7 @@
       </tr>
 <script type="text/javascript">
 	// while loop
-	while(year < 2064)
-	{
+	do{
 		year++;
 		document.write("<tr>");
 		document.write("<td>" +time+ " years</td>");
@@ -52,7 +51,7 @@
 		document.write("<td>$" +bal+ "</td>");
 		document.write("</tr>"); 
 		time++;
-	}
+	} while(year < 2064);
 </script>
 	</table>
 </body>

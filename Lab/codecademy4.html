@@ -18,13 +18,13 @@
 <script type="text/javascript">
 	var computerChoice = Math.random();
 	var userChoice = prompt("Do you choose rock, paper or scissors?");
-	//userChoice = userChoice.toLowerCase();
+	userChoice = userChoice.toLowerCase();
 	var str = "";
 	
-	do{
+	while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors"){
 		userChoice = prompt("Please enter only rock, paper, or scissors!");
 		userChoice = userChoice.toLowerCase();
-	} while (userChoice !== "rock" && userChoice !== "paper" && userChoice !== "scissors");
+	} 
 	
 	if (computerChoice <= 0.34){
 		computerChoice = "rock";
@@ -75,6 +75,7 @@
 	document.write(str);
 	
 </script>
-
+	<input type="button" value="Reload Page" onClick="history.go(0)";>
+	<form method="post">
 </body>
 </html>
