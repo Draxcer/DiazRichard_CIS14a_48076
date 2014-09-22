@@ -1,0 +1,59 @@
+<script type="text/javascript">
+	/*
+		Name: Richard Diaz
+		Date: 09/15/2014
+		Class: Javascript
+		Purpose: Loops - For
+	*/
+</script>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Retirement</title>
+</head>
+
+<body>
+	<h1> Retirement Table </h1>
+<script type="text/javascript">
+	// Setup savings table
+	var bal = Number(prompt("How much are you putting into retirement initially?")); // inital balance - $
+	var intRate = 6;  // interest rate - %/annum
+	var year = 2014;
+	var time = 1;
+	var deposit = Number(prompt("How much are you putting in every year?")); // deposit = $
+	// initial conditions
+		document.write("<p> Starting Year: " +year+ "</p>");
+		document.write("<p> Starting balance = $" +bal+ "</p>");
+		document.write("<p> Yearly deposit = $" +deposit+ "</p>");
+		
+	//create table
+</script>
+    <table width="200" border="1">
+      <tr>
+      	<th># of Years</th>
+        <th>Year</th>
+        <th>Savings $</th>
+      </tr>
+<script type="text/javascript">
+	// while loop
+	while(year < 2064)
+	{
+		year++;
+		document.write("<tr>");
+		document.write("<td>" +time+ " years</td>");
+		document.write("<td>" +year+ "</td>");
+		// Calculate the balance
+		bal*=(1+intRate/100);
+		bal += deposit;
+		console.log(bal);
+		bal = bal.toFixed(2);
+		document.write("<td>$" +bal+ "</td>");
+		document.write("</tr>"); 
+		time++;
+	}
+</script>
+	</table>
+</body>
+</html>

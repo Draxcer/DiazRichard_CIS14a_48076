@@ -1,0 +1,87 @@
+<script type="text/javascript">
+	/*
+		Name: Richard Diaz
+		Date: 09/15/2014
+		Class: Javascript
+		Purpose: Loops - For
+	*/
+</script>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Retirement</title>
+</head>
+
+<body>
+	<h1> Retirement Table </h1>
+<script type="text/javascript">
+	// Setup savings table
+	var bal1 = 0; //Number(prompt("How much are you putting into retirement initially?")); // inital balance - $
+	//var bal2 = bal1; 
+	var intRate1 = 5;  // interest rate - %/annum
+	//var intRate2 = 6;
+	var year = 2014;
+	var time = 1;
+	var deposit = 7500;// = Number(prompt("How much are you putting in every year?")); // deposit = $
+	// initial conditions
+		document.write("<p> Starting Year: " +year+ "</p>");
+		document.write("<p> Starting balance = $" +bal1+ "</p>");
+		document.write("<p> Yearly deposit = $" +deposit+ "</p>");
+	
+	var time = [];
+	var balanc = [];
+	var interest = [];
+	var yrDeposit = [];
+	time[0] = 0;
+	balanc[0]=0;
+	yrDeposit[0] = 7500;
+	interest[0] = 0;
+	
+	for(var time = 1; time <= 50; time++)
+	{
+		time[time]=time;
+		
+		interest[time] = balanc[time-1]*intRate1/100;
+		yrDeposit[time]+=yrDeposit[time-1];
+		balanc[time]=balanc[time-1]+interest[time]+yrDeposit[time];
+		year++;
+	}
+	
+	//create table
+</script>
+    <table width="200" border="1">
+      <tr>
+      	<th># of Years</th>
+        <th>Year</th>
+        <th>Savings @ 5% $</th>
+        <th>Savings @ 6% $</th>
+        <th>Interest @ 5% $</th>
+        <th>Interest @ 6% $</th>
+        <th>Yearly Deposit $</th>
+      </tr>
+<script type="text/javascript">
+	// while loop
+	//do{
+		
+		
+		document.write("<tr>");
+		document.write("<td>" +time+ " years</td>");
+		document.write("<td>" +year+ "</td>");
+		// Calculate the balance
+		//bal1*=(1+intRate1/100);
+		//bal1 += deposit;
+		//bal1 = bal1.toFixed(2);
+		document.write("<td>$" + balanc[time] + "</td>"); 
+		//===
+		//bal2*=(1+intRate2/100);
+		//bal2 += deposit;
+		//bal2 = bal2.toFixed(2);
+		//document.write("<td>$" +bal2+ "</td>");
+		document.write("</tr>"); 
+	//} while(year < 2064);
+</script>
+	</table>
+</body>
+</html>
