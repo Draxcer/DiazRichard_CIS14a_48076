@@ -1,0 +1,73 @@
+<script type="text/javascript">
+	/*
+		Name: Richard Diaz
+		Date: 09/15/2014
+		Class: Javascript
+		Purpose: Loops - For
+	*/
+</script>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+	table{text-align: center;}
+</style>
+<title>Retirement</title>
+
+</head>
+
+<body>
+    	<h1> Retirement Table </h1>
+
+    <script type="text/javascript">
+        // Setup savings table
+        var bal = 0;  
+        var intRate1 = 7; 
+        var time = 1;
+        var deposit = 7500; 
+        // declare arrays
+        var rTable = [];
+        var cols = 4
+        for (var col=0; col<cols; col++) {
+            rTable[col] = []
+        }
+
+        rTable[0][0] = 0; //time
+        rTable[1][0] = bal; //balanc
+        rTable[2][0] = 0; // interest
+        rTable[3][0] = 0; // yrdeposit
+
+        for (var time = 1; time <= 50; time++) {
+            rTable[0][time] = time;
+
+            rTable[2][time] = rTable[1][time-1]*(intRate1/100);
+            rTable[3][time] += deposit;
+            rTable[1][time] = rTable[1][time-1]+rTable[2][time]+rTable[3][time];
+        }
+        document.write("<p> Starting Interest: " + intRate1 + "%</p>");
+        document.write("<p> Starting balance = $" + bal + "</p>");
+        document.write("<p> Yearly deposit = $" + deposit + "</p>");
+    </script>
+    <table width="50%" border="1" align="center">
+        <tr>
+            <th># of Years</th>
+            <th>Savings @ 7% $</th>
+            <th>Interest @ 7% $</th>
+            <th>Yearly Deposit $</th>
+        </tr>
+        <script type="text/javascript">
+        	for (var time = 1; time<=50; time++) {
+				document.write("<tr>");
+                document.write("<td>" + rTable[0][time].toFixed(0)+"</td>");
+                for (var col=1; col<cols; col++) {
+                    document.write("<td>"+rTable[col][time].toFixed(2)+"</td>");
+                }
+				document.write("</tr>");
+            }
+ 
+        </script>
+    </table>
+</body>
+</html>

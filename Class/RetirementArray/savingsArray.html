@@ -20,7 +20,7 @@
 	// Setup savings table
 	var bal1 = 0; //Number(prompt("How much are you putting into retirement initially?")); // inital balance - $
 	//var bal2 = bal1; 
-	var intRate1 = 5;  // interest rate - %/annum
+	var intRate1 = 7;  // interest rate - %/annum
 	//var intRate2 = 6;
 	var year = 2014;
 	var time = 1;
@@ -35,8 +35,8 @@
 	var interest = [];
 	var yrDeposit = [];
 	time[0] = 0;
-	balanc[0]=0;
-	yrDeposit[0] = 7500;
+	balanc[0]=bal1;
+	yrDeposit[0] = 0;
 	interest[0] = 0;
 	
 	for(var time = 1; time <= 50; time++)
@@ -44,7 +44,7 @@
 		time[time]=time;
 		
 		interest[time] = balanc[time-1]*intRate1/100;
-		yrDeposit[time]+=yrDeposit[time-1];
+		yrDeposit[time]+=deposit;
 		balanc[time]=balanc[time-1]+interest[time]+yrDeposit[time];
 		year++;
 	}
@@ -64,22 +64,23 @@
 <script type="text/javascript">
 	// while loop
 	//do{
-		
-		
+	for(var time = 1; time <= 50; time++)	
+		{
 		document.write("<tr>");
-		document.write("<td>" +time+ " years</td>");
-		document.write("<td>" +year+ "</td>");
+		document.write("<td>" +time.toFixed(2)+ " years</td>");
+		document.write("<td>" +year.toFixed(2)+ "</td>");
 		// Calculate the balance
 		//bal1*=(1+intRate1/100);
 		//bal1 += deposit;
 		//bal1 = bal1.toFixed(2);
-		document.write("<td>$" + balanc[time] + "</td>"); 
+		document.write("<td>$" + balanc[time].toFixed(2) + "</td>"); 
 		//===
 		//bal2*=(1+intRate2/100);
 		//bal2 += deposit;
 		//bal2 = bal2.toFixed(2);
 		//document.write("<td>$" +bal2+ "</td>");
 		document.write("</tr>"); 
+		}
 	//} while(year < 2064);
 </script>
 	</table>
