@@ -11,9 +11,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style>
-	table{text-align: center;}
-</style>
 <title>Retirement</title>
 
 </head>
@@ -25,17 +22,16 @@
         // Setup savings table
         var bal = 0;  
         var intRate1 = 7; 
-        var time = 1;
         var deposit = 7500; 
         // declare arrays
         var rTable = [];
         var cols = 4
         for (var col=0; col<cols; col++) {
-            rTable[col] = []
+            rTable[col] = [];
         }
 
         rTable[0][0] = 0; //time
-        rTable[1][0] = bal; //balanc
+        rTable[1][0] = bal; //balance
         rTable[2][0] = 0; // interest
         rTable[3][0] = 0; // yrdeposit
 

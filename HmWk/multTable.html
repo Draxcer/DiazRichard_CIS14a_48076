@@ -1,0 +1,47 @@
+<script type="text/javascript">
+	/*
+		Name: Richard Diaz
+		Date: 09/24/2014
+		Class: Javascript
+		Purpose: 2d Array
+	*/
+</script>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Multiplication Table</title>
+</head>
+
+<body>
+    <table width="200" border="1">
+        <script type="text/javascript">
+            var mTable = []; //array
+            var nums = 12; // max number
+
+            // create 2d array
+            for (var col=0; col<=nums; col++) {
+                mTable[col] = [];
+            }
+            //=== Header forloop
+            document.write("<tr>");
+            for (var n=0; n<=12; n++) {
+                document.write("<th>");
+                mTable[0][n] = n;
+                document.write(mTable[0][n] + "</th>");
+            }
+            document.write("</tr>");
+            //=== rest of the rows/columns
+            for (var n=1; n<=12; n++) { // new row loop
+                document.write("<tr>");
+                document.write("<td>" + n + "</td>");
+                for (var col=1; col<=nums; col++) { // new entry loop // multiply row# by col#
+                    document.write("<td>" + mTable[col][n]*col + "</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+</body>
+</html>
