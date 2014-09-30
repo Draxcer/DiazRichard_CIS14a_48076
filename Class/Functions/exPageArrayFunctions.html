@@ -1,0 +1,43 @@
+<script type="text/javascript">
+	/*
+		Name: Richard Diaz
+		Date: 09/29/2014
+		Class: javascript
+		Purpose: Functions
+	*/
+</script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style> 
+	h1 {text-align: center;}
+	table{text-align: center;}
+</style>
+<title>Example Functions</title>
+<script type="text/javascript" src="retirement.js">
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+	// Create a table that outputs retirement values
+	var balance = 0; // $
+	var intRate = 5; // % int yearly
+	var mDeposit = 100; // monthly deposit
+	var nYears = 50;
+	
+	var str = "";
+	str += ("<h1> Balance = $" +balance+ "</h1>");
+	str += ("<h1> Interest Rate = " +balance+ "%/year</h1>");
+	str += ("<h1> Monthly Deposit = $" +mDeposit+ "</h1>");
+	// output results in table
+	var retirement = retireArray(balance, intRate, nYears, mDeposit);
+	var heading = [];
+	heading[0] = "Year";
+	heading[1] = "Savings $";
+	str += display(heading, retirement);
+	document.write(str);
+</script>
+</body>
+</html>
