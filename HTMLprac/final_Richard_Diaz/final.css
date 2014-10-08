@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* final.css */
+
+#homebar{ 
+	background-color: black; 
+	text-align:center;
+}
+	
+#header {
+	background-color: black; 
+	text-align:center; 
+	color:white;
+}
+	
+#body {
+	width:50%; 
+	margin-left:auto; 
+	margin-right:auto; 
+	height:395;
+	background-color: white;
+	text-align:center;
+}
+
+h1 {
+	text-align:center;
+	font-size:36px;	
+}
+
+h2 {
+	text-align:center;
+}
+	
+a {
+	color: rgb(170, 170, 170);
+}
+
+p {
+	padding-left:10px; 
+	padding-right:10px;	
+}
