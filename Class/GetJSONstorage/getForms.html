@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="getForm.js"></script>
+<title>Create the getObj</title>
+</head>
+
+<body>
+<script type="text/javascript">
+	var url = document.location.href;
+	$_GET = getForm(url);
+	for(name in $_GET) {
+		document.write(name + " = " + $_GET[name] + "<br/>");
+	}
+	
+	var text = JSON.stringify($_GET);
+	document.write("<p>" + text + "</p>");
+	$_GET.text=text;
+	
+	localStorage.setItem("trial1", text);
+	sessionStorage.setItem("trial1", text);
+	localStorage.trial2=text;
+	var lsText=localStorage.getItem("trial1");
+	var obj=JSON.parse(lsText);
+	for(name in obj) {
+		document.write(name + " = " + obj[name] + "<br/>");
+	}
+	
+	var lsText=sessionStorage.getItem("trial1");
+	var obj=JSON.parse(lsText);
+	for(property in obj) {
+		document.write(property + " = " + obj[property] + "<br/>");
+	}
+	
+</script>
+</body>
+</html>

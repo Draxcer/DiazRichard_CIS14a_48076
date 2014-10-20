@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="getForm.js"></script>
+<title>Create the getObj</title>
+</head>
+
+<body>
+<script type="text/javascript">
+	var url = document.location.href;
+	$_GET = getForm(url);
+	for(name in $_GET) {
+		document.write(name + " = " + $_GET[name] + "<br/>");
+	}
+	
+	var text = JSON.stringify($_GET);
+	document.write("<p>" + text + "</p>");
+	$_GET.text=text;
+	var text2 = JSON.stringify($_GET);
+	document.write("<p>" + text2 + "</p>");
+	var obj=JSON.parse(text2);
+	for(name in obj) {
+		document.write(name + " = " + obj[name] + "<br/>");
+	}
+	
+</script>
+</body>
+</html>
